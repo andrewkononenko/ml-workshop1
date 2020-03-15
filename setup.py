@@ -12,7 +12,8 @@ setup(
         'pandas==1.0.1',
         'matplotlib==3.2.0rc3',
         'altair==4.0.1',
-        "numpy==1.18.1"
+        "numpy==1.18.1",
+        'scikit-learn==0.22.2'
 
     ],
 

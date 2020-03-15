@@ -26,10 +26,12 @@ if __name__ == "__main__":
     df_raw = get_init_dataset(dataset_path)
 
     # Drop all rows with NULL cells
+    df_raw_clean = df_raw.dropna()
 
     # Drop all rows with negative price
+    df_raw_clean = df_raw_clean[(df_raw_clean['tx_price'] >= 0)]
 
     # Provide one hot encoding
+    df_raw_clean = one_hot_encoding(df_raw_clean,  string_labels + integer_labels)
 
-    df_encoded = ""
-    plot_prices(sort_and_split(df_encoded, 2))
+    plot_prices(sort_and_split(df_raw_clean, 2))
